@@ -78,21 +78,16 @@ movies = [
 }
 ]
 
-num = int(input("Введите кол-во фильмов для расчета: "))
-movs =[]
-for i in range (num):
-    name = input(f"Введите название фильма {i + 1}: ")
-    movs.append(name)
+categ = str(input("Введите категорию фильмов для расчета: "))
 
 def ans(fname):
     total = 0
-    for x in fname:
-        for y in movies:
-            if x.lower() == y["name"].lower():
-                total = total + y["imdb"]
-                break
-    nums = len(fname)
-    avg = total/nums
+    count = 0
+    for y in movies:
+        if fname.lower() == y["category"].lower():
+            total = total + y["imdb"]
+            count = count + 1
+    avg = total/count
     print(avg)
 
-ans(movs)    
+ans(categ)    

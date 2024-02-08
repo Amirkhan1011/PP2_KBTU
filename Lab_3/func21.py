@@ -82,7 +82,7 @@ kino = input ("Введите название фильма: ")
 
 def ans(fname):
     for x in movies:
-        if fname == x["name"]:
+        if fname.lower() == x["name"].lower():
             print(f"Рейтинг фильма {fname}: {x['imdb']}")
             if x['imdb'] > 5.5:
                 print("True")
@@ -90,4 +90,5 @@ def ans(fname):
                 print("False")
             break
 
+ans(kino)
 
